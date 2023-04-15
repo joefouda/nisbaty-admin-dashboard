@@ -4,7 +4,6 @@ import { useEffect, useState, useContext } from 'react'
 import useToggle from '../customHooks/useToggle'
 import { NotificationContext } from '../App'
 import ResponedToOpportunity from '../forms/ResponedToOpportunity'
-import { Badge } from 'antd'
 import Chip from '@material-ui/core/Chip'
 import DoneIcon from '@material-ui/icons/Done';
 import CloseIcon from '@material-ui/icons/Close';
@@ -52,7 +51,7 @@ const Opportunities = () => {
                 ...ele,
                 ownerName: ele.owner.name,
                 ownerPhone: ele.owner.phone,
-                state: ele.state === 'WAPPROVAL' ? <><ResponedToOpportunity responed={responed} toggleProgress={toggleProgress} opportunity={{ ...ele }} mode="Accept" /><ResponedToOpportunity responed={responed} opportunity={ele} toggleProgress={toggleProgress} mode="Reject" /></> : ele.state === 'APPROVED' ? <Chip color="success" label="Approved" icon={<DoneIcon />} /> : <Chip color="error" label="Rejected" icon={<CloseIcon />} />
+                state: ele.state === 'WAPPROVAL' ? <><ResponedToOpportunity responed={responed} toggleProgress={toggleProgress} opportunity={{ ...ele }} mode="Accept" /><ResponedToOpportunity responed={responed} opportunity={ele} toggleProgress={toggleProgress} mode="Reject" /></> : ele.state === 'APPROVED' ? <Chip style={{backgroundColor:"#66BB6A" , color:'white'}}  label="Approved" icon={<DoneIcon style={{color:'white'}} />} /> : <Chip style={{backgroundColor:"red" , color:'white'}} label="Rejected" icon={<CloseIcon style={{color:'white'}} />} />
             }
         })
         setOpportunities(() => [...data])
