@@ -15,7 +15,7 @@ export default function Login(props) {
 
     const onFinish = (values) => {
         toggleProgress();
-        axios.post('http://157.230.231.198/api/v1/admin/signup', values).then((response) => {
+        axios.post('https://nisbaty.com/api/v1/admin/signup', values).then((response) => {
             if (!response.data.message.includes('duplicate key error')) {
                 navigate('/login')
             } else {

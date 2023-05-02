@@ -18,7 +18,7 @@ const Users = (props) => {
   }
 
   const handleToggle = (event, id) => {
-    axios.put(`http://157.230.231.198/api/v1/user/toggleState/${id}`, {}, {
+    axios.put(`https://nisbaty.com/api/v1/user/toggleState/${id}`, {}, {
       headers: {
         'Authorization': localStorage.getItem('token')
       }
@@ -31,7 +31,7 @@ const Users = (props) => {
 
   useEffect(() => {
     toggleProgress()
-    axios.get('http://157.230.231.198/api/v1/user/users', {
+    axios.get('https://nisbaty.com/api/v1/user/users', {
       headers: {
         'Authorization': localStorage.getItem('token')
       }

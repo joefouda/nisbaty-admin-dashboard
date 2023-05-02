@@ -20,7 +20,7 @@ const Opportunities = () => {
     }
 
     const responed = (data) => {
-        axios.put(`http://157.230.231.198/api/v1/opportunity`, data, {
+        axios.put(`https://nisbaty.com/api/v1/opportunity`, data, {
             headers: {
                 'Authorization': localStorage.getItem('token')
             }
@@ -28,7 +28,7 @@ const Opportunities = () => {
             console.log(res)
             let message = res.data?.opportunity?.state === 'APPROVED' ? 'Opportunity Approved Successfully' : 'Opportunity Rejected Successfully'
             handleNotification('success', message)
-            axios.get('http://157.230.231.198/api/v1/opportunity', {
+            axios.get('https://nisbaty.com/api/v1/opportunity', {
                 headers: {
                     'Authorization': localStorage.getItem('token')
                 }
@@ -59,7 +59,7 @@ const Opportunities = () => {
 
     useEffect(() => {
         toggleProgress()
-        axios.get('http://157.230.231.198/api/v1/opportunity', {
+        axios.get('https://nisbaty.com/api/v1/opportunity', {
             headers: {
                 'Authorization': localStorage.getItem('token')
             }
